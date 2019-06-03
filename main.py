@@ -52,7 +52,7 @@ logger = logging.getLogger(__name__)
 
 def main():
     # Setup bot
-    updater = Updater(os.environ['PYTEL'], user_sig_handler=signal_handler)
+    updater = Updater(os.environ.get('PYTEL', ""), user_sig_handler=signal_handler)
     dispatcher = updater.dispatcher
 
     start_handler = CommandHandler('start', start)
